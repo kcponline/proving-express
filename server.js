@@ -5,19 +5,31 @@ var http = require('http');
 var PORT1=7000;
 var PORT2=7500;
 
-//We need a function which handles requests and send response
+//We need separate function to handle requests and send response per each PORT server.
 // kp note that response.end may seem similar with console.log but
-// kp it's printing to the DOM instead of hidden in console
-function handleRequest(request, response){
-    response.end('It Works!! Path Hit: ' + request.url);
+// kp it's printing to the DOM instead of hidden in console.
+// kp make separate handleRequest function for each PORT server.
+function handleRequest1(request, response){
+    response.end('It Works!! Path1 Hit: ' + request.url);
 }
 
-//Create a server
-// kp notice the use of the HTTP module, createServer method, and handleRequest function.
-var server = http.createServer(handleRequest);
+function handleRequest2(request, response){
+    response.end('It Works!! Path2 Hit: ' + request.url);
+}
 
-//Lets start our server
-server.listen(PORT, function(){
+
+//Create a server for each PORT
+// kp notice the use of the HTTP module, createServer method, and handleRequest function.
+var server1 = http.createServer(handleRequest1);
+var server2 = http.createServer(handleRequest2);
+
+//Lets start our servers
+server1.listen(PORT1, function(){
     //Callback triggered when server is successfully listening. Hurray!
-    console.log("Server listening on: http://localhost:%s", PORT);
+    console.log("Server listening on: http://localhost:%s", PORT1);
+});
+
+server2.listen(PORT2, function(){
+    //Callback triggered when server is successfully listening. Hurray!
+    console.log("Server listening on: http://localhost:%s", PORT2);
 });
