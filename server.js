@@ -38,16 +38,20 @@ function handleRequest(req, res){
     default:
       display_404(url_parts.pathname, req, res);
   }
+
 }
 
 // When we visit the 'http://localhost:8080/' path, this function is run.
 // kp - this simulates a webpage content
 function display_root(url, req, res) {
 
-  fs.readFile("index.html", function(err, data){
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.end(data);
-  });
+	fs.readFile("index.html", function(err, data){
+		res.writeHead(200, {'Content-Type': 'text/html'});
+		res.end(data);
+	});
+	var method = req.method.toLowerCase();
+	var requestData = method + " " + req.url;
+	console.log("you just", requestData);
 
 }
 
@@ -58,6 +62,10 @@ function display_FavoriteFood(url, req, res) {
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.end(data);
   });
+	var method = req.method.toLowerCase();
+	var requestData = method + " " + req.url;
+	console.log("you just", requestData);
+
 
 }
 
@@ -68,6 +76,10 @@ function display_FavoriteMovies(url, req, res) {
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.end(data);
   });
+	var method = req.method.toLowerCase();
+	var requestData = method + " " + req.url;
+	console.log("you just", requestData);
+
 
 }
 
@@ -78,6 +90,9 @@ function display_FavoriteCSSFrameworks(url, req, res) {
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.end(data);
   });
+	var method = req.method.toLowerCase();
+	var requestData = method + " " + req.url;
+	console.log("you just", requestData);
 
 }
 
