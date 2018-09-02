@@ -21,9 +21,6 @@ function handleRequest(req, res){
     case '/':
       display_root(url_parts.pathname, req, res);
       break;
-    case '/portfolio':
-      display_portfolio(url_parts.pathname, req, res);
-      break;
     case '/edit':
     // nodejs' equivalent to console.log but it didn't work... maybe because express server is not installed?
       sys.puts("display edit");
@@ -36,24 +33,12 @@ function handleRequest(req, res){
 // When we visit the 'http://localhost:8080/' path, this function is run.
 // kp - this simulates a webpage content
 function display_root(url, req, res) {
-  var myHTML = '<html>';
-  myHTML += '<body><h1>Home Page</h1>';
-  myHTML += "<a href='/portfolio'>Portfolio</a>";
-  myHTML += '</body></html>';
-  res.writeHead(200, {'Content-Type': 'text/html'});
 
-  res.end(myHTML);
-}
+  fs.readFile("index.html", function(err, data){
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.end(data);
+  });
 
-// When we visit the 'http://localhost:8080/portfolio' path, this function is run.
-function display_portfolio(url, req, res) {
-  var myHTML = '<html>';
-  myHTML += '<body><h1>My Portfolio</h1>';
-  myHTML += "<a href='/'>Go Home</a>";
-  myHTML += '</body></html>';
-  res.writeHead(200, {'Content-Type': 'text/html'});
-
-  res.end(myHTML);
 }
 
 // When we visit any path that is not specifically defined, this function is run.
