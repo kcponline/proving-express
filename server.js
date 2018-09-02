@@ -23,13 +23,13 @@ function handleRequest(req, res){
       display_root(url_parts.pathname, req, res);
       break;
     case '/FavoriteFood':
-      display_root(url_parts.pathname, req, res);
+      display_FavoriteFood(url_parts.pathname, req, res);
       break;
     case '/FavoriteMovies':
-      display_root(url_parts.pathname, req, res);
+      display_FavoriteMovies(url_parts.pathname, req, res);
       break;
-    case '/FavoriteCSSFramworks':
-      display_root(url_parts.pathname, req, res);
+    case '/FavoriteCSSFrameworks':
+      display_FavoriteCSSFrameworks(url_parts.pathname, req, res);
       break;
     case '/edit':
     // nodejs' equivalent to console.log but it didn't work... maybe because express server is not installed?
