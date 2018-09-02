@@ -1,8 +1,9 @@
 //Lets require/import the HTTP module
 var http = require('http');
 
-//Lets define a port we want to listen to
-var PORT=8080;
+//Lets define one port per each server we want to listen to
+var PORT1=7000;
+var PORT2=7500;
 
 //We need a function which handles requests and send response
 // kp note that response.end may seem similar with console.log but
