@@ -1,5 +1,6 @@
 //Lets require/import the HTTP module
 var http = require('http');
+var fs = require('fs');
 
 //The url library allows us to parse parts of the request url.
 var url = require('url');
