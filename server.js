@@ -1,7 +1,8 @@
 //Lets require/import the HTTP module
 var http = require('http');
-var fs = require('fs');
 
+// kp this module allows to serve html.
+var fs = require('fs');
 //The url library allows us to parse parts of the request url.
 var url = require('url');
 
@@ -21,6 +22,15 @@ function handleRequest(req, res){
     case '/':
       display_root(url_parts.pathname, req, res);
       break;
+    case '/FavoriteFood':
+      display_root(url_parts.pathname, req, res);
+      break;
+    case '/FavoriteMovies':
+      display_root(url_parts.pathname, req, res);
+      break;
+    case '/FavoriteCSSFramworks':
+      display_root(url_parts.pathname, req, res);
+      break;
     case '/edit':
     // nodejs' equivalent to console.log but it didn't work... maybe because express server is not installed?
       sys.puts("display edit");
@@ -35,6 +45,36 @@ function handleRequest(req, res){
 function display_root(url, req, res) {
 
   fs.readFile("index.html", function(err, data){
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.end(data);
+  });
+
+}
+
+// When we visit the 'http://localhost:8080/FavoriteFood' path, this function is run.
+function display_FavoriteFood(url, req, res) {
+
+  fs.readFile("FavoriteFood/index.html", function(err, data){
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.end(data);
+  });
+
+}
+
+// When we visit the 'http://localhost:8080/FavoriteMovies' path, this function is run.
+function display_FavoriteMovies(url, req, res) {
+
+  fs.readFile("FavoriteMovies/index.html", function(err, data){
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.end(data);
+  });
+
+}
+
+// When we visit the 'http://localhost:8080/FavoriteCSSFrameworks' path, this function is run.
+function display_FavoriteCSSFrameworks(url, req, res) {
+
+  fs.readFile("FavoriteCSSFrameworks/index.html", function(err, data){
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.end(data);
   });
