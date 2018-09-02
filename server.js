@@ -66,7 +66,6 @@ function display_FavoriteFood(url, req, res) {
 	var requestData = method + " " + req.url;
 	console.log("you just", requestData);
 
-
 }
 
 // When we visit the 'http://localhost:8080/FavoriteMovies' path, this function is run.
@@ -79,7 +78,6 @@ function display_FavoriteMovies(url, req, res) {
 	var method = req.method.toLowerCase();
 	var requestData = method + " " + req.url;
 	console.log("you just", requestData);
-
 
 }
 
@@ -103,6 +101,11 @@ function display_404(url, req, res) {
   });
   res.write("<h1>404 Not Found </h1>");
   res.end("The page you were looking for: " + url + " can not be found ");
+	
+	var method = req.method.toLowerCase();
+	var requestData = method + " " + req.url;
+	console.log("you just", requestData);
+
 }
 
 //Create a server
