@@ -49,9 +49,21 @@ function display_root(url, req, res) {
 		res.writeHead(200, {'Content-Type': 'text/html'});
 		res.end(data);
 	});
+
+    // kp Saving the request method as a variable.  
 	var method = req.method.toLowerCase();
-	var requestData = method + " " + req.url;
-	console.log("you just", requestData);
+	var requestData = '';
+
+    // kp this simply prints the get request in backaend.
+  requestData = method + " " + req.url;
+  console.log("you just", requestData);
+
+    // kp When the server receives POST data, it will add it to requestData.
+  req.on('data', function(data) {
+    requestData += data;
+    console.log('You just posted some data to the server!');
+    console.log("Your data was " + requestData);
+  });
 
 }
 
