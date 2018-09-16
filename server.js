@@ -1,9 +1,9 @@
-// Requiring dependencies
+// Requiring dependencies; fs is like http & url which is included in node & no need to do npm install
 var http = require('http');
 var fs = require('fs');
 
 // Set our port to 80
-// kp port 80 is a mistake and the server won't start. it has to be 8080
+// kp port 80 is when deployment. Otherwise, use 8080 or do sudo node server.js
 var PORT = 8080;
 
 var server = http.createServer(handleRequest);
@@ -12,7 +12,7 @@ function handleRequest(req, res){
 
 	fs.readFile("index.html", function(err, data){
 	  res.writeHead(200, {'Content-Type': 'text/html'});
-	  res.end(data);
+	  res.end(data); 
 	});
 
 };
