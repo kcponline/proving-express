@@ -9,12 +9,12 @@ var PORT2=7500;
 // kp note that response.end may seem similar with console.log but
 // kp it's printing to the DOM instead of hidden in console.
 // kp make separate handleRequest function for each PORT server.
-function handleRequest1(request, response){
-    response.end('It Works!! Path1 Hit: ' + request.url);
+function handleRequest1(req, res){
+    res.end('It Works!! Path1 Hit: ' + request.url);
 }
 
-function handleRequest2(request, response){
-    response.end('It Works!! Path2 Hit: ' + request.url);
+function handleRequest2(req, res){
+    res.end('It Works!! Path2 Hit: ' + request.url);
 }
 
 
