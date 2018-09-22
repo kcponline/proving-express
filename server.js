@@ -24,8 +24,8 @@ function handleRequest(req, res){
       display_portfolio(url_parts.pathname, req, res);
       break;
     case '/edit':
-    // nodejs' equivalent to console.log but it didn't work... maybe because express server is not installed?
-      sys.puts("display edit");
+    // sys.puts is nodejs' equivalent to console.log but it's deprecated. so just use console.log
+      console.log("display edit", url_parts.pathname);
       break;
     default:
       display_404(url_parts.pathname, req, res);
