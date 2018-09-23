@@ -31,9 +31,9 @@ function handleRequest(req, res){
     case '/FavoriteCSSFrameworks':
       display_FavoriteCSSFrameworks(url_parts.pathname, req, res);
       break;
-    case '/edit':
+    case '/Edit':
     // nodejs' equivalent to console.log but it didn't work... maybe because express server is not installed?
-      sys.puts("display edit");
+      display_Edit(url_parts.pathname, req, res);
       break;
     default:
       display_404(url_parts.pathname, req, res);
@@ -91,6 +91,15 @@ function display_FavoriteCSSFrameworks(url, req, res) {
 	var method = req.method.toLowerCase();
 	var requestData = method + " " + req.url;
 	console.log("you just", requestData);
+
+}
+
+// When we visit the 'http://localhost:8080/Edit' path, this function is run.
+function display_Edit(url, req, res) {
+
+  var method = req.method.toLowerCase();
+  var requestData = method + " " + req.url;
+  console.log("you just", requestData);
 
 }
 
