@@ -50,7 +50,7 @@ function display_root(url, req, res) {
 		res.end(data);
 	});
 	var method = req.method.toLowerCase();
-	var requestData = method + " " + req.url;
+	var requestData = method + " " + url;
 	console.log("you just", requestData);
 
 }
@@ -63,7 +63,7 @@ function display_FavoriteFood(url, req, res) {
     res.end(data);
   });
 	var method = req.method.toLowerCase();
-	var requestData = method + " " + req.url;
+	var requestData = method + " " + url;
 	console.log("you just", requestData);
 
 }
@@ -76,7 +76,7 @@ function display_FavoriteMovies(url, req, res) {
     res.end(data);
   });
 	var method = req.method.toLowerCase();
-	var requestData = method + " " + req.url;
+	var requestData = method + " " + url;
 	console.log("you just", requestData);
 
 }
@@ -89,7 +89,7 @@ function display_FavoriteCSSFrameworks(url, req, res) {
     res.end(data);
   });
 	var method = req.method.toLowerCase();
-	var requestData = method + " " + req.url;
+	var requestData = method + " " + url;
 	console.log("you just", requestData);
 
 }
@@ -98,7 +98,7 @@ function display_FavoriteCSSFrameworks(url, req, res) {
 function display_Edit(url, req, res) {
 
   var method = req.method.toLowerCase();
-  var requestData = method + " " + req.url;
+  var requestData = method + " " + url;
   console.log("you just", requestData);
 
 }
@@ -112,7 +112,7 @@ function display_404(url, req, res) {
   res.end("The page you were looking for: " + url + " can not be found ");
 	
 	var method = req.method.toLowerCase();
-	var requestData = method + " " + req.url;
+	var requestData = method + " " + url;
 	console.log("you just", requestData);
 
 }
