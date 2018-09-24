@@ -54,8 +54,8 @@ function display_root(url, req, res) {
 	var method = req.method.toLowerCase();
 	var requestData = '';
 
-    // kp this simply prints the get request in backend.
-  requestData = method + " " + req.url;
+    // kp this simply prints the request in backend to the server.
+  requestData = method + " " + url;
   console.log("you just", requestData);
 
     // kp When the server receives POST data, it will add it to requestData.
@@ -76,7 +76,7 @@ function display_FavoriteFood(url, req, res) {
     res.end(data);
   });
 	var method = req.method.toLowerCase();
-	var requestData = method + " " + req.url;
+	var requestData = method + " " + url;
 	console.log("you just", requestData);
 
 }
@@ -89,7 +89,7 @@ function display_FavoriteMovies(url, req, res) {
     res.end(data);
   });
 	var method = req.method.toLowerCase();
-	var requestData = method + " " + req.url;
+	var requestData = method + " " + url;
 	console.log("you just", requestData);
 
 }
@@ -102,7 +102,7 @@ function display_FavoriteCSSFrameworks(url, req, res) {
     res.end(data);
   });
 	var method = req.method.toLowerCase();
-	var requestData = method + " " + req.url;
+	var requestData = method + " " + url;
 	console.log("you just", requestData);
 
 }
@@ -111,7 +111,7 @@ function display_FavoriteCSSFrameworks(url, req, res) {
 function display_Edit(url, req, res) {
 
   var method = req.method.toLowerCase();
-  var requestData = method + " " + req.url;
+  var requestData = method + " " + url;
   console.log("Display Edit", requestData);
 
 }
@@ -125,7 +125,7 @@ function display_404(url, req, res) {
   res.end("The page you were looking for: " + url + " can not be found ");
 	
 	var method = req.method.toLowerCase();
-	var requestData = method + " " + req.url;
+	var requestData = method + " " + url;
 	console.log("you just", requestData);
 
 }
